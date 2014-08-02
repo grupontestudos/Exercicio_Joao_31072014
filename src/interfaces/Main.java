@@ -354,4 +354,273 @@ public class Main implements MainInterface{
 	} 
 	while (!opcao.equals("N"));
 	}
+
+	
+	//Método de execução do exercício 21
+	@Override
+	public void executaExercicio21() {
+	String nome;
+	int idade;
+	Character sexo;
+	String saude;
+		
+	for (int i = 1; i < 10; i++) {
+		
+		nome = JOptionPane.showInputDialog("Digite o nome: ");
+		sexo = JOptionPane.showInputDialog("Digite o sexo: ('M' para masculino e 'F' para feminino: )").charAt(0);
+		idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a sua idade: "));
+		saude = JOptionPane.showInputDialog("Digite o seu estado de saúde (O para ótima, B para boa e R para regular)");
+		
+		if ((idade>18 && sexo.equals('M')) && ((saude.equals("B") || saude.equals("O")))){
+		JOptionPane.showMessageDialog(null, "Olá "+nome+", você pode servir as forças armadas. ");	
+		}else{
+		JOptionPane.showMessageDialog(null, "Olá "+nome+", você não pode servir as forças armadas");	
+		}	
+	}
+  }
+	
+	//Método de execução do exercício 22
+	@Override
+	public void executaExercicio22() {
+    double precoCusto;
+    double precoVenda;
+    double mediaCusto = 0;
+    double mediaVenda = 0;
+    double somaCusto = 0;
+    double somaVenda = 0;
+    for (int i = 1; i < 10; i++) {
+	precoCusto = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de compra"));
+	precoVenda = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de venda"));
+	somaCusto = somaCusto+precoCusto;
+	somaVenda = somaVenda+precoVenda;
+	mediaCusto = (somaCusto/i);
+	mediaCusto = (somaVenda/i);
+	if (precoCusto < precoVenda){
+	JOptionPane.showMessageDialog(null, "Lucro");
+	}else if (precoCusto > precoVenda){
+	JOptionPane.showMessageDialog(null, "Prejuízo");	
+	}else{
+	JOptionPane.showMessageDialog(null, "Nem um nem outro");	
+	}
+	}
+    JOptionPane.showMessageDialog(null, "Média Custo: " + mediaCusto);
+    JOptionPane.showMessageDialog(null, "Média Custo: " + mediaVenda);	
+	}
+	
+	//Método de execução do exercício 23
+	@Override
+	public void executaExercicio23() {
+    double numero;
+    
+    numero = Double.parseDouble(JOptionPane.showInputDialog("Digite um número"));
+    
+    if (numero > 80){
+    JOptionPane.showMessageDialog(null, "O número é maior que 80.");	
+    }else if (numero <25){
+    JOptionPane.showMessageDialog(null, "O número é menor que 25.");	
+    }else if (numero == 40){
+    JOptionPane.showMessageDialog(null, "O número é igual a 40");	
+    }else
+    JOptionPane.showMessageDialog(null, "O número não se encontra em nenum dos intervalos especificados.");	
+	}
+	
+	//Método de execução do exercício 24
+	@Override
+	public void executaExercicio24() {
+	double numero;
+    for (int i = 1; i < 10; i++) {
+	numero = Double.parseDouble(JOptionPane.showInputDialog("Digite um número"));
+	if (numero > 0){
+	JOptionPane.showMessageDialog(null, "Positivo");	
+	}else if(numero < 0){
+	JOptionPane.showMessageDialog(null, "Negativo");	
+	}else
+	JOptionPane.showMessageDialog(null, "Neutro");	
+    }		
+	}
+	
+	//Método de execução do exercício 25
+	@Override
+	public void executaExercicio25() {
+	double numero1;
+	double numero2;
+	for (int i = 1; i < 10; i++) {
+	numero1 = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+	numero2 = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
+	if (numero1 == numero2){
+	JOptionPane.showMessageDialog(null, "Números iguais");
+	}
+	if (numero1 != numero2){
+	JOptionPane.showMessageDialog(null, "Números diferentes");
+	}
+	if (numero1>numero2){
+	JOptionPane.showMessageDialog(null, "O primeiro é maior do que o segundo");		
+	}
+	if (numero1 < numero2) {
+	JOptionPane.showMessageDialog(null, "O primeiro é menor do que o segundo");	
+	}	
+	}
+	}
+	
+	//Método de execução do exercício 26
+	@Override
+	public void executaExercicio26() {
+	int numero = 0;
+	numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número"));
+	switch (numero) {
+	case 1 : JOptionPane.showMessageDialog(null, "Um");
+	break;
+	case 2 : JOptionPane.showMessageDialog(null, "Dois");
+	break;
+	case 3 : JOptionPane.showMessageDialog(null, "Três");
+	break;
+	case 4 : JOptionPane.showMessageDialog(null, "Quartro");
+	break;
+	case 5 : JOptionPane.showMessageDialog(null, "Cinco");
+	break;
+	default: JOptionPane.showMessageDialog(null, "Número inválido");
+		break;
+	}
+	}
+	
+	//Método de execução do exercício 27
+	@Override
+	public void executaExercicio27() {
+	double valor = 0;
+	String combustivel;
+	double total;
+	double desconto = 0;
+	
+	do {
+	valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do carro"));
+	combustivel = JOptionPane.showInputDialog("Digite o tipo de combustível \nA - Álcool \nG - Gasolina \nD - Diesel");
+	if(combustivel.equals("A")){
+	    desconto = valor*0.25;	
+	}
+	if(combustivel.equals("G")){
+		desconto = valor*0.21;	
+		}
+	if(combustivel.equals("D")){
+		desconto = valor*0.14;	
+	}
+	total = valor - desconto;
+	JOptionPane.showMessageDialog(null, "Desconto: " +desconto+ "\nTota: "+total);
+	valor = Double.parseDouble(JOptionPane.showInputDialog("Deseja continuar"));
+	} while (valor != 0);		
+	}
+	
+	//Método de execução do exercício 28
+	@Override
+	public void executaExercicio28() {
+	String nome;
+	double salario;
+	double salarioMinimo = 724;
+	double reajuste = 0;
+	double salarioTotal = 0;
+	double folhaPagamento = 0;
+    
+	for (int i = 1; i < 5; i++) {
+		nome = JOptionPane.showInputDialog("Digite o nome: ");
+		salario = Double.parseDouble(JOptionPane.showInputDialog("Digite o salário: "));		
+		
+		if(salario  < (salarioMinimo * 3)){
+			reajuste = salario*0.5;
+			salarioTotal = salario+reajuste;
+			JOptionPane.showMessageDialog(null, nome+ ": Reajuste de 50%.\nSalário Anterior: "+salario+"\nApós Reajuste: "+salarioTotal);
+		}
+		
+		if(salario  > (salarioMinimo * 3) && salario < (salarioMinimo * 10)){
+			reajuste = salario*0.20;
+			salarioTotal = salario+reajuste;
+			JOptionPane.showMessageDialog(null, nome+ "Reajuste de 20%.\nSalário Anterior: "+salario+"\nApós Reajuste: "+salarioTotal);
+		}
+		
+		if(salario  > (salarioMinimo * 10) && salario  < (salarioMinimo * 20)){
+			reajuste = salario*0.15;
+			salarioTotal = salario+reajuste;
+			JOptionPane.showMessageDialog(null, nome+ "Reajuste de 15%.\nSalário Anterior: "+salario+"\nApós Reajuste: "+salarioTotal);
+		}
+		
+		if(salario  > (salarioMinimo * 20)){
+			reajuste = salario*0.10;
+			salarioTotal = salario+reajuste;
+			JOptionPane.showMessageDialog(null, nome+ "Reajuste de 10%.\nSalário Anterior: "+salario+"\nApós Reajuste: "+salarioTotal);
+		}
+		
+		folhaPagamento = folhaPagamento+reajuste;
+		
+	}
+	    JOptionPane.showMessageDialog(null, "A empresa terá que aumentar R$" + folhaPagamento+" na folha de pagamento");
+    }
+	
+	//Método de execução do exercício 29
+	@Override
+	public void executaExercicio29() {
+	int mes;
+	mes = Integer.parseInt(JOptionPane.showInputDialog("Digite o número do mês"));
+	switch (mes) {
+	case 1: JOptionPane.showMessageDialog(null, "Janeiro");
+	break;
+	case 2: JOptionPane.showMessageDialog(null, "Fevereiro");
+	break;
+	case 3: JOptionPane.showMessageDialog(null, "Março");
+	break;
+	case 4: JOptionPane.showMessageDialog(null, "Abril");
+	break;
+	case 5: JOptionPane.showMessageDialog(null, "Maio");
+	break;
+	case 6: JOptionPane.showMessageDialog(null, "Junho");
+	break;
+	case 7: JOptionPane.showMessageDialog(null, "Julho");
+	break;
+	case 8: JOptionPane.showMessageDialog(null, "Agosto");
+	break;
+	case 9: JOptionPane.showMessageDialog(null, "Setembro");
+	break;
+	case 10: JOptionPane.showMessageDialog(null, "Outubro");
+	break;
+	case 11: JOptionPane.showMessageDialog(null, "Novembro");
+	break;
+	case 12: JOptionPane.showMessageDialog(null, "Dezembro");
+	break;
+	default: JOptionPane.showMessageDialog(null, "Mês inválido");
+		break;
+	}
+    }
+	
+	@Override
+	public void executaExercicio30() {
+	String nome;
+	int idade;
+	Character sexo;
+	double salario;
+	double abono;
+	
+	nome = JOptionPane.showInputDialog("Digite o nome: ");
+	idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade: "));
+	sexo = JOptionPane.showInputDialog("Digite o sexo: ").charAt(0);
+	salario = Double.parseDouble(JOptionPane.showInputDialog("Digite o salário"));
+	
+	if (sexo.equals('M') && idade >= 30){ 
+	abono = 100;
+	salario = salario+abono;
+	}
+	if (sexo.equals('M') && idade < 30){ 
+		abono = 50;
+		salario = salario+abono;
+	}
+	if (sexo.equals('F') && idade >= 30){ 
+		abono = 200;
+		salario = salario+abono;
+	}
+	if (sexo.equals('F') && idade < 30){ 
+		abono = 80;
+		salario = salario+abono;
+	}
+    JOptionPane.showMessageDialog(null, "Nome: "+nome+"\nSalário Líquido: "+salario);
+	
+	
+	
+	}
+	
 }
