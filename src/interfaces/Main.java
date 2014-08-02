@@ -331,7 +331,7 @@ public class Main implements MainInterface{
 	double percentual;
 	double desconto;
 	double total;
-	char opcao;
+	String opcao;
 	do {
 	modelo = JOptionPane.showInputDialog("Digite o modelo do carro: ");
 	valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do carro: "));
@@ -345,8 +345,13 @@ public class Main implements MainInterface{
 	desconto = valor*percentual;
 	total = valor-desconto;
 	JOptionPane.showMessageDialog(null, "O valor do carro "+modelo+" é de: "+valor+", e com o desconto de "+desconto+" cai para: "+total);
-	opcao = JOptionPane.showInputDialog("Deseja calcular o valor de outro carro (Digite N para parar de calcular ou qualquer outra tecla para continuar calculando)?").charAt(0);
+	
+	opcao = JOptionPane.showInputDialog("Deseja calcular o valor de outro carro (Digite N para parar de calcular ou qualquer outra tecla para continuar calculando)?");
+	if (opcao.equals("")){
+	JOptionPane.showMessageDialog(null, "A opção não pode ser deixada em branco.");
+	opcao = JOptionPane.showInputDialog("Deseja calcular o valor de outro carro (Digite N para parar de calcular ou qualquer outra tecla para continuar calculando)?");
+	}
 	} 
-	while (opcao != 'N');
+	while (!opcao.equals("N"));
 	}
 }
