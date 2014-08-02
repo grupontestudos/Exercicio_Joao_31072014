@@ -1,12 +1,12 @@
-package ex10;
+package ex14;
 
 import interfaces.Main;
 
-public class Ex_10 {
+public class Ex_14 {
 	public static void main(String[] args) {
 
 		Main main = new Main();
-		main.executaExercicio10();
+		main.executaExercicio14();
 
 	}
 }
